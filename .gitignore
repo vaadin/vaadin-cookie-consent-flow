@@ -11,3 +11,4 @@ yarn.lock
 **.iml
 .DS_Store
 local.properties
+.vscode
