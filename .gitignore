@@ -1,0 +1,13 @@
+target/
+.classpath
+.project
+.settings
+*~
+node_modules
+bower_components
+node
+yarn.lock
+.idea/
+**.iml
+.DS_Store
+local.properties
