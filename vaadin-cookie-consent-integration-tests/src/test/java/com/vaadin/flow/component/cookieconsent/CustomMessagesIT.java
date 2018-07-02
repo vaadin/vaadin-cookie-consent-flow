@@ -4,17 +4,22 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.vaadin.flow.component.confirmdialog.examples.CustomMessages;
 import com.vaadin.flow.component.cookieconsent.testbench.CookieConsentElement;
+import com.vaadin.testbench.parallel.BrowserUtil;
 
 public class CustomMessagesIT extends AbstractParallelTest {
 
     @Test
     public void test() throws Exception {
+        if (BrowserUtil.isIE(getDesiredCapabilities())) {
+            Assert.fail("this should fail");
+        }
         open(CustomMessages.class, WINDOW_SIZE_SMALL);
         final CookieConsentElement element = $(CookieConsentElement.class)
                 .get(0);
