@@ -29,9 +29,7 @@ public class CustomMessagesIT extends AbstractParallelTest {
         final WebElement dismiss = element.getDismissLinkElement();
         dismiss.click();
         Thread.sleep(1000);
-        WebElement container = getDriver()
-                .findElement(By.className("cc-window"));
-        assertFalse(container.isDisplayed());
+        assertFalse(element.isDisplayed());
     }
 
 }

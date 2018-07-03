@@ -19,16 +19,12 @@ public class DefaultSettingsIT extends AbstractParallelTest {
         final CookieConsentElement element = $(CookieConsentElement.class)
                 .get(0);
         assertNotNull(element);
-        WebElement container = getDriver()
-                .findElement(By.className("cc-window"));
-        final WebElement dismiss = container
-                .findElement(By.className("cc-dismiss"));
+        final WebElement dismiss = element.getDismissLinkElement();
         assertNotNull(dismiss);
         assertEquals("Got it!", dismiss.getText());
         dismiss.click();
         Thread.sleep(1000);
-        container = getDriver().findElement(By.className("cc-window"));
-        assertFalse(container.isDisplayed());
+        assertFalse(element.isDisplayed());
     }
 
 }

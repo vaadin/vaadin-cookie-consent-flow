@@ -56,6 +56,11 @@ public class CookieConsentElement extends TestBenchElement {
         return getContainer();
     }
 
+    @Override
+    public boolean isDisplayed() {
+        return getContainer().isDisplayed();
+    }
+
     WebElement getElementFromContainer(By by) {
         final WebElement container = getContainer();
         return container != null ? container.findElement(by) : null;
