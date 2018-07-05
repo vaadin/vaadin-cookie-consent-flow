@@ -1,10 +1,11 @@
 package com.vaadin.flow.component.cookieconsent.testbench;
 
+import java.util.Optional;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 
-import com.google.common.base.Strings;
 import com.vaadin.flow.component.cookieconsent.CookieConsent.Position;
 import com.vaadin.testbench.TestBenchElement;
 import com.vaadin.testbench.elementsbase.Element;
@@ -41,16 +42,15 @@ public class CookieConsentElement extends TestBenchElement {
     }
 
     public Position getPosition() {
-        final String attributeValue = getAttribute("position");
-        final boolean hasValue = !Strings.isNullOrEmpty(attributeValue);
-        return hasValue ? Position.valueOf(attributeValue.replace('-', '_').toUpperCase())
-                : null;
+        return Optional.ofNullable(getAttribute("position"))
+                .map(value -> value.replace('-', '_')).map(String::toUpperCase)
+                .map(Position::valueOf).orElse(null);
     }
 
     public WebElement getContainer() {
         return getDriver().findElement(By.className("cc-window"));
     }
- 
+
     @Override
     public SearchContext getContext() {
         return getContainer();
@@ -64,7 +64,21 @@ public class CookieConsentElement extends TestBenchElement {
     WebElement getElementFromContainer(By by) {
         final WebElement container = getContainer();
         return container != null ? container.findElement(by) : null;
-
     }
 
+    /**
+     * Default values for the element properties.
+     *
+     */
+    public static final class DefaultValues {
+        public static final String MESSAGE = "This website uses cookies to ensure you get the best experience.";
+        public static final String DISMISS_LABEL = "Got it!";
+        public static final String LEARN_MORE_LABEL = "Learn more";
+        public static final String LEARN_MORE_LINK = "https://cookiesandyou.com/";
+        public static final Position POSITION = Position.TOP;
+
+        private DefaultValues() {
+        }
+
+    }
 }
