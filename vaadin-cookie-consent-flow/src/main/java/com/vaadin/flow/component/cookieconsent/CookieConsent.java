@@ -24,7 +24,7 @@ import com.vaadin.flow.component.dependency.HtmlImport;
 /**
  * Server-side component for the <code>vaadin-cookie-consent</code> element,
  * used for showing a cookie consent banner the first time a user visits the
- * application, till the banner is dismissed.
+ * application, untill the banner is dismissed.
  *
  * @author Vaadin Ltd
  */
