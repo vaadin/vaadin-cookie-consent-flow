@@ -9,7 +9,7 @@ script: mvn -B verify -Dvaadin.proKey=$VAADIN_PRO_KEY -Dvaadin.productionMode -D
 branches:
   only:
     - master
-    - 1.0
+    - /^\d+\.\d+$/
 cache:
   directories:
   - $HOME/.m2
