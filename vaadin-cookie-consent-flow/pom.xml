@@ -138,7 +138,6 @@
 						<!-- Implementation-Title and Implementation-Version
                             come from the POM by default -->
 						<Implementation-Title>Vaadin Cookie Consent</Implementation-Title>
-						<_removeheaders>Built-By</_removeheaders>
 					</instructions>
 				</configuration>
 			</plugin>
