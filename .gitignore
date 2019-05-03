@@ -12,3 +12,9 @@ yarn.lock
 .DS_Store
 local.properties
 .vscode
+
+# The following files are generated/updated by flow-maven-plugin
+package.json
+package-lock.json
+webpack.config.js
+node_modules/
