@@ -4,7 +4,7 @@ dist: xenial
 before_install:
   - echo "sauce.user=$SAUCE_USER" > local.properties && echo "sauce.sauceAccessKey=$SAUCE_ACCESSKEY" >> local.properties
 
-script: mvn -B clean verify -Dvaadin.proKey=$VAADIN_PRO_KEY -Dvaadin.productionMode -Dcom.vaadin.testbench.Parameters.testsInParallel=2
+script: xvfb-run  --server-args="-screen 0 1024x768x24"  -B clean verify -Dvaadin.proKey=$VAADIN_PRO_KEY -Dvaadin.productionMode -Dcom.vaadin.testbench.Parameters.testsInParallel=2
 
 branches:
   only:
