@@ -40,7 +40,7 @@
             <version>2.1.0</version>
         </dependency>
         <dependency>
-            <groupId>org.webjars.bowergithub.insites</groupId>
+            <groupId>org.webjars.bowergithub.osano</groupId>
             <artifactId>cookieconsent</artifactId>
             <version>3.1.0</version>
         </dependency>
