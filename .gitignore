@@ -14,9 +14,10 @@ local.properties
 .vscode
 
 # The following files are generated/updated by flow-maven-plugin
+node_modules/
 package.json
 package-lock.json
+pnpm-lock.yaml
+tsconfig.json
 webpack.config.js
 webpack.generated.js
-node_modules/
-tsconfig.json
