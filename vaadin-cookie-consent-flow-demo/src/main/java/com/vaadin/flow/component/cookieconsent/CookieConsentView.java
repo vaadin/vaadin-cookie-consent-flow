@@ -3,6 +3,7 @@ package com.vaadin.flow.component.cookieconsent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.cookieconsent.CookieConsent;
 import com.vaadin.flow.component.cookieconsent.CookieConsent.Position;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.demo.DemoView;
 import com.vaadin.flow.router.Route;
 
@@ -16,6 +17,7 @@ public class CookieConsentView extends DemoView {
     protected void initView() {
         defaultValues();
         customValues();
+        addCard("Add components to UI", new Label("Add components to UI"));
     }
 
     private void defaultValues() {
@@ -52,7 +54,12 @@ public class CookieConsentView extends DemoView {
             getUI().get().getPage().executeJavaScript("$0._show()",
                     cookieConsent.getElement());
         });
+        // @formatter:off
+        // begin-source-example
+        // source-example-heading: Add components to UI
         addCard(heading, button);
+        // end-source-example
+        // @formatter:on
     }
 
     private void clearCookieConsent() {
