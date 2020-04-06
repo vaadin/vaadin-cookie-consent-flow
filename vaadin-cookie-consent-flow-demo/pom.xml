@@ -11,7 +11,7 @@
     </parent>
     <artifactId>vaadin-cookie-consent-flow-demo</artifactId>
 
-    <packaging>${packaging.type}</packaging>
+    <packaging>jar</packaging>
     <name>Vaadin Cookie Consent Flow Demo</name>
 
     <properties>
@@ -98,7 +98,7 @@
     <profiles>
         <profile>
             <!--Only used for local testing -->
-            <id>war</id>
+            <id>war-profile</id>
             <properties>
                 <packaging.type>war</packaging.type>
             </properties>
